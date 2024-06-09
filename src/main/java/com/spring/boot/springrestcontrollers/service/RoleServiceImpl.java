@@ -1,7 +1,7 @@
 package com.spring.boot.springrestcontrollers.service;
 
 import com.spring.boot.springrestcontrollers.entity.Role;
-import com.spring.boot.springrestcontrollers.reposotory.RoleRepository;
+import com.spring.boot.springrestcontrollers.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

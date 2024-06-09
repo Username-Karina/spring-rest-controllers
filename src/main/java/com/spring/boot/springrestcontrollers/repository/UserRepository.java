@@ -1,4 +1,4 @@
-package com.spring.boot.springrestcontrollers.reposotory;
+package com.spring.boot.springrestcontrollers.repository;
 
 import com.spring.boot.springrestcontrollers.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
