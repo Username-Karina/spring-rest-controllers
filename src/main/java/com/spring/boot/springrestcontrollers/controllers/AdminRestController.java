@@ -1,33 +1,26 @@
 package com.spring.boot.springrestcontrollers.controllers;
 
-import com.spring.boot.springrestcontrollers.entity.Role;
 import com.spring.boot.springrestcontrollers.entity.User;
 import com.spring.boot.springrestcontrollers.service.RoleService;
 import com.spring.boot.springrestcontrollers.service.UserService;
+import com.spring.boot.springrestcontrollers.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.List;
 
 @RestController
-public class MyRestController {
+public class AdminRestController {
 
-    private final UserService userService;
-    private final RoleService roleService;
+    private UserService userService;
+    private RoleService roleService;
 
     @Autowired
-    public MyRestController(UserService userService, RoleService roleService){
+    public AdminRestController(UserService userService, RoleService roleService){
         this.userService = userService;
         this.roleService = roleService;
-    }
-
-    @GetMapping(value = "/principal")
-    public ResponseEntity<User> getPrincipal(Principal principal) {
-        User user = userService.getByEmail(principal.getName());
-        return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
     }
 
     @GetMapping(value = "/all")
@@ -46,7 +39,6 @@ public class MyRestController {
     public ResponseEntity<User> edit(@PathVariable int id, @RequestBody User user){
         userService.edit(user);
         return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
-
     }
 
     @DeleteMapping(value = "/delete/{id}")
