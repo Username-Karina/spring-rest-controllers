@@ -19,7 +19,7 @@ function newUser(event){
         roles : stringToRoles(roles)
     })
 
-    fetch("http://localhost:8080/new",{
+    fetch("api/admin/new",{
         method : "POST",
         headers : {
             'Accept': 'application/json',

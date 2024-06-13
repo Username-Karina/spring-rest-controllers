@@ -11,7 +11,7 @@ function editUser(event){
     let password = document.getElementById("editPassword").value;
     let roles = Array.from(document.getElementById("editRole").selectedOptions)
         .map(option => option.value);
-    fetch("http://localhost:8080/edit/" + id, {
+    fetch("api/admin/edit/" + id, {
         method: "PUT",
         headers: {
             'Accept': 'application/json',

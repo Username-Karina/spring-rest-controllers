@@ -5,7 +5,7 @@ function deleteUser(event){
 
     let id = document.getElementById("deleteId").value;
 
-    fetch("http://localhost:8080/delete/" + id,{
+    fetch("api/admin/delete/" + id,{
         method: "DELETE",
         headers: {
             'Accept': 'application/json',

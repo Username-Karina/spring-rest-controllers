@@ -1,6 +1,6 @@
 function getPrincipal() {
 
-    fetch("http://localhost:8080/principal/",{
+    fetch("api/user/principal/",{
         method: "GET",
         headers:{
             'Accept': 'application/json',

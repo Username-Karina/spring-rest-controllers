@@ -9,7 +9,7 @@ $(document).ready(function (){
 });
 
 function getCurrentUser() {
-    fetch("http://localhost:8080/principal")
+    fetch("api/admin/principal")
         .then((response) => response.json())
         .then((user) => {
             document.getElementById("currentUserEmail").innerHTML = `${user.email}`;
@@ -19,7 +19,7 @@ function getCurrentUser() {
 }
 
 function getAllUsers() {
-    fetch("http://localhost:8080/all", {
+    fetch("api/admin/all", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -63,7 +63,7 @@ function rolesToString(roles) {
 }
 
 function getRoles(){
-    fetch("http://localhost:8080/roles",{
+    fetch("api/admin/roles",{
         method: "GET",
         headers:{
             'Accept': 'application/json',
